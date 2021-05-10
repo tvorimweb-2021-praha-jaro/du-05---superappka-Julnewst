@@ -15,7 +15,7 @@ html { box-sizing: border-box; }
 
 body {
     padding: 0;
-    margin: 0;
+    margin: 5rem 0 0 0;
     background-color: #e5e5e5;
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 400;
@@ -27,7 +27,238 @@ body {
     width: 960px; /* obsah stránky je omezený do pruhu širokého 960px */
     margin: 0 auto; /* pruh je na stránce vycentrovaný */
     background: white;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0%, 0%, 0.2);
 }
 
+
 /* ----- zde začni psát vlastní CSS ----- */
+body {
+	margin: 0;
+}
+
+
+.obal {
+	width: auto;
+}
+
+.nav {
+	margin: 0;
+}
+
+.menu {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+  overflow: hidden;
+	margin: 0;
+	padding: 0;
+	text-shadow: 0 0 4px hsla(0, 0%, 0%, 0.3);
+	line-height: 1rem;
+ }
+
+.menu-line1,
+.menu-line2 {
+	display: flex;
+	margin: 0;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
+.menu-item {
+	color: #48418e;
+	font-size: 1.2rem;
+	font-weight: 500;
+	padding: 1rem;
+	text-decoration: none;
+	list-style-type: none;
+	text-align: center;
+	flex-shrink: 1;
+	flex-grow: 1;
+	align-self: center;
+}
+
+.homepage-menu-item {
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.menu-item:hover,
+.menu-item:focus,
+.menu-item:active {
+	background-color: #48418e;
+	color: white;
+  transition: 300ms;
+  transition-timing-function: ease-in;
+  margin: 0;
+	padding: 1.2rem;
+	text-shadow: 0 0 4px hsla(0, 0%, 0%, 0.3);
+}
+
+
+.graficka-prezentace {
+	background: linear-gradient(to right, #24133D, #AB5476);
+	background-repeat: no-repeat;
+	background-position: center center;
+	display: flow-root;
+	padding: 0rem 2rem 2rem 2rem;
+	text-shadow: 0 0 4px hsla(0, 0%, 0%, 0.3);
+	overflow: hidden;
+	margin: 0;
+}
+
+.nazev-produktu {
+	font-size: 2.5rem;
+	margin: 0;
+	font-weight: normal;
+}
+
+.titulek-popisy {
+	font-size: 1.5rem;
+	color: #48418e;
+	text-align: center;
+}
+
+p {
+	font-size: 1rem;
+	font-family: 'Roboto';
+	text-align: center;
+	font-weight: 500;
+	margin: 0;
+}
+
+.slogan {
+	font-size: 1.5rem;
+	font-weight: 300;
+	margin: 0;
+	text-align: left;
+	padding-top: 0;
+}
+
+.graficka-prezentace img {
+	visibility: hidden;
+	max-height: 0;
+}
+
+.popisy {
+	padding: 0rem 2rem 2rem 2rem;
+	margin: 0;
+}
+
+.tlacitka,
+.nazev-produktu,
+.slogan {
+	color: white;
+	margin: 0;
+}
+
+.nazev-produktu,
+.slogan {
+	color: white;
+}
+
+.tlacitko {
+	border: 1px solid silver;
+	border-radius: 0.5rem;
+	text-align: center;
+	padding: 0.5rem 1rem;
+	margin-top: 1rem;
+	font-size: 1rem;
+	max-width: 300px;
+}
+
+.tlacitko:hover,
+.tlacitko:focus,
+.tlacitko:active {
+	background-color: #48418e;
+  transition: 300ms;
+}
+
+.ikona {
+	text-align: center;
+}
+
+.obrazek-ikona {
+	width: 50px;
+}
+
+footer {
+	background-color: #48418e;
+	color: white;
+	text-align: center;
+	padding: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+	.menu {
+		display: flex;
+		flex-wrap: nowrap;
+		flex-direction: row;
+		text-align: left;
+		line-height: 2rem;
+	}
+	.menu li {
+		display: inline-block;
+	}
+	.menu-item {
+		font-size: 1.2rem;
+		padding: 1.2rem;
+	}
+	.nazev-produktu {
+		font-size: 5rem;
+	}
+	.produkt {
+		display: flex;
+		flex-direction: column;
+	}
+	.titulek-popisy {
+		font-size: 1.7rem;
+	}
+	p {
+		font-size: 1.2rem;
+	}
+	.slogan {
+		font-size: 2.5rem;
+		max-width: 70%;
+	}
+	.popisy {
+		padding: 0rem 2.2rem 2.2rem 2.2rem;
+		margin: 0;
+		display: flex;
+	}
+	.nadpis-popisu {
+		padding: 2rem;
+	}
+	.titulekSikonou {
+		display: flex;
+		flex-direction: column-reverse;
+		align-content: center;
+	}
+	.tlacitka {
+		display: flex;
+	}
+	.tlacitko {
+		padding: 0.7rem 1.2rem;
+		margin-top: 1.2rem;
+		font-size: 1.2rem;
+	}
+	.viceinfo {
+		margin-left: 1.2rem;
+	}
+}
+
+@media screen and (min-width: 860px) {
+	.graficka-prezentace {
+		background-image: url(images/pozadi.jpg);
+		position: relative;
+	}
+	.graficka-prezentace img {
+		visibility: visible;
+		max-height: 100%;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+	.obal {
+		max-width: 960px;
+	}
+}
