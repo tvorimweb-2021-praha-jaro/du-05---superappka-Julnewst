@@ -48,21 +48,12 @@ body {
 .menu {
 	display: flex;
 	flex-wrap: wrap;
-	flex-direction: column;
-  overflow: hidden;
+	overflow: hidden;
 	margin: 0;
 	padding: 0;
 	text-shadow: 0 0 4px hsla(0, 0%, 0%, 0.3);
 	line-height: 1rem;
  }
-
-.menu-line1,
-.menu-line2 {
-	display: flex;
-	margin: 0;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-}
 
 .menu-item {
 	color: #48418e;
@@ -72,40 +63,48 @@ body {
 	text-decoration: none;
 	list-style-type: none;
 	text-align: center;
-	flex-shrink: 1;
-	flex-grow: 1;
-	align-self: center;
-}
+	flex-basis: 50%;
+  }
 
 .homepage-menu-item {
 	text-transform: uppercase;
 	font-weight: 600;
 }
 
-.menu-item:hover,
-.menu-item:focus,
-.menu-item:active {
+.menu li:hover,
+.menu li:focus,
+.menu li:active {
 	background-color: #48418e;
-	color: white;
-  transition: 300ms;
+	transition: 300ms;
   transition-timing-function: ease-in;
   margin: 0;
 	padding: 1.2rem;
 	text-shadow: 0 0 4px hsla(0, 0%, 0%, 0.3);
 }
 
+.menu li a:hover,
+.menu li a:focus,
+.menu li a:active {
+  color: white;
+  }
 
-.graficka-prezentace {
-	background: linear-gradient(to right, #24133D, #AB5476);
-	background-repeat: no-repeat;
-	background-position: center center;
-	display: flow-root;
-	padding: 0rem 2rem 2rem 2rem;
-	text-shadow: 0 0 4px hsla(0, 0%, 0%, 0.3);
-	overflow: hidden;
-	margin: 0;
+.menu li a {
+  text-decoration: none;
+  flex-basis: 50%;
 }
 
+.graficka-prezentace {
+	background: linear-gradient( hsla(253, 91%, 31%, 0.4),  hsla(0, 0%, 0%, 0.4)), url(images/pozadi.jpg) ;
+	background-repeat: no-repeat;
+	background-position: center center;
+	padding: 2rem 0rem 0rem 2rem;
+	text-shadow: 0 0 4px hsla(0, 0%, 0%, 0.);
+	overflow: hidden;
+	margin: 0;
+  display: flex;
+  }
+
+  
 .nazev-produktu {
 	font-size: 2.5rem;
 	margin: 0;
@@ -118,9 +117,8 @@ body {
 	text-align: center;
 }
 
-p {
+popis {
 	font-size: 1rem;
-	font-family: 'Roboto';
 	text-align: center;
 	font-weight: 500;
 	margin: 0;
@@ -128,6 +126,7 @@ p {
 
 .slogan {
 	font-size: 1.5rem;
+  font-family: 'Roboto';
 	font-weight: 300;
 	margin: 0;
 	text-align: left;
@@ -156,6 +155,15 @@ p {
 	color: white;
 }
 
+
+.tlacitka{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
 .tlacitko {
 	border: 1px solid silver;
 	border-radius: 0.5rem;
@@ -163,18 +171,39 @@ p {
 	padding: 0.5rem 1rem;
 	margin-top: 1rem;
 	font-size: 1rem;
-	max-width: 300px;
+	}
+
+.stazeni {
+  background-color: #48418e;
+  }
+
+.tlacitka a {
+  text-decoration: none;
+  color: white;
 }
 
-.tlacitko:hover,
-.tlacitko:focus,
-.tlacitko:active {
-	background-color: #48418e;
+.tlacitko a:hover{
+	color: white;
+}
+
+.viceinfo:hover {
+  border: none;
+  background-color: #48418e;
   transition: 300ms;
+  transition-timing-function: ease-in;
 }
 
-.ikona {
-	text-align: center;
+.stazeni:hover {
+  background: none;
+  color: silver;
+  border: 2px solid #24133D;
+  transition-timing-function: ease-in;
+}
+
+.nadpis-popisu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .obrazek-ikona {
@@ -192,73 +221,85 @@ footer {
 	.menu {
 		display: flex;
 		flex-wrap: nowrap;
-		flex-direction: row;
 		text-align: left;
 		line-height: 2rem;
 	}
-	.menu li {
-		display: inline-block;
-	}
+	
 	.menu-item {
-		font-size: 1.2rem;
+   	font-size: 1.2rem;
 		padding: 1.2rem;
 	}
+
 	.nazev-produktu {
 		font-size: 5rem;
 	}
+
 	.produkt {
 		display: flex;
 		flex-direction: column;
 	}
-	.titulek-popisy {
-		font-size: 1.7rem;
-	}
-	p {
-		font-size: 1.2rem;
-	}
+	
 	.slogan {
 		font-size: 2.5rem;
 		max-width: 70%;
 	}
+
+  .tlacitka {
+		flex-direction: row;
+    justify-content: flex-start;
+	}
+
+  .tlacitko{
+    flex-shrink: 2;
+  }
+
+	.tlacitko a {
+		padding: 0.7rem 1.2rem;
+		margin-top: 1.2rem;
+		font-size: 1.2rem;
+	}
+
+	.viceinfo {
+		margin-left: 1.2rem;
+	}
+
 	.popisy {
 		padding: 0rem 2.2rem 2.2rem 2.2rem;
 		margin: 0;
 		display: flex;
 	}
+
 	.nadpis-popisu {
 		padding: 2rem;
 	}
-	.titulekSikonou {
-		display: flex;
-		flex-direction: column-reverse;
-		align-content: center;
+
+	.titulek-popisy {
+		font-size: 1.7rem;
+    order: 2;
 	}
-	.tlacitka {
-		display: flex;
-	}
-	.tlacitko {
-		padding: 0.7rem 1.2rem;
-		margin-top: 1.2rem;
+
+	.popis {
 		font-size: 1.2rem;
+    order: 3;
 	}
-	.viceinfo {
-		margin-left: 1.2rem;
-	}
+
+  .obrazek-ikona {
+    order: 1;
+  }
+	
 }
 
 @media screen and (min-width: 860px) {
-	.graficka-prezentace {
-		background-image: url(images/pozadi.jpg);
-		position: relative;
-	}
+
+	
+
 	.graficka-prezentace img {
 		visibility: visible;
 		max-height: 100%;
-		position: absolute;
-		bottom: 0;
-		right: 0;
-	}
+		}
+
 	.obal {
 		max-width: 960px;
 	}
+
 }
